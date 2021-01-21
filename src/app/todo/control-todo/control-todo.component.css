@@ -1,0 +1,32 @@
+
+  .app{
+    margin: 0 auto;
+    width: 1200px;
+    background-color: black;
+
+  }
+  .app__input{
+    margin: 0 auto;
+    width: 550px;
+  }
+  .app__input-text {
+    width: 400px;
+  }
+ 
+  .app__complete{
+
+padding-top: 10px; 
+   cursor: pointer;
+
+
+  }
+  
+  .todo-buttons{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .todo-text{
+    width: 800px;
+    text-decoration: none ;
+  }

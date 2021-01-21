@@ -1,0 +1,31 @@
+<div class="app">
+    <div class="app__input">
+        <mat-form-field class="app__input-text">
+            <mat-label>Input Todo</mat-label>
+            <input matInput placeholder="Enter todo text" [(ngModel)]="newTodo">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="AddTodo()">Add Todo</button>
+    </div>
+    <mat-list dense>
+        <mat-list-item *ngFor="let todo of todos">
+            <div class="todo-text" [ngStyle]="{'text-decoration': todo.completed == true ? 'line-through' : 'none' }">
+                <form [formGroup]="profileForm">
+
+                    <span *ngIf="todo.selected!=true">{{todo.title}}</span>
+                    <textarea *ngIf="todo.selected==true" formControlName="editedText"></textarea>
+                </form>
+            </div>
+            <div class="todo-buttons">
+                <button mat-flat-button color="accent" (click)="EditTodo($event,todo)">EDIT</button>
+                <mat-checkbox [ngModel]="todo.completed" (change)="CompleteTodo($event,todo.id)" class="app__complete">
+                </mat-checkbox>
+                <button mat-stroked-button color="warn" (click)="DeleteTodo(todo.id)">Delete Todo </button>
+            </div>
+
+        </mat-list-item>
+
+    </mat-list>
+
+</div>
+
+<!-- [ngStyle]="{text-decoration: todo.completed == true ? 'line-through' : 'none' }" -->
